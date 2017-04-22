@@ -2,7 +2,7 @@ require('dotenv').config({silent: true});
 
 var gulp = require('gulp');
 var contentful = require('contentful');
-var handlebars = require('gulp-handlebars');
+var mustache = require('gulp-mustache');
 var rimraf = require('rimraf');
 
 
@@ -12,6 +12,11 @@ gulp.task('clean', function() {
 
 gulp.task('build', function() {
   return gulp.src('src/**/*')
+    .pipe(mustache({
+      sermons: [{
+        title: "Hello, there"
+      }]
+    }))
     .pipe(gulp.dest('public'));
 });
 
