@@ -1,0 +1,13 @@
+<p>{{ name }}, {{ city }}</p>
+<p>Organizers:</p>
+<ul>
+  {{ #organizers }}
+    <li>{{ name }}, {{ email }}</li>
+  {{ /organizers }}
+</ul>
+<p>Members:</p>
+<ul>
+  {{ #members }}
+    <li>{{ name }}, {{ email }}</li>
+  {{ /members }}
+</ul>
